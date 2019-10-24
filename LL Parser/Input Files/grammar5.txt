@@ -1,0 +1,6 @@
+%%
+S	: i E t S | i E t S e S | w E do S | a
+E	: b
+%%
+a [0-9]+
+b [0-9]+

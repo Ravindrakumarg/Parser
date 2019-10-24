@@ -1,0 +1,81 @@
+	Log file for grammer parsing on different stage
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+Here is th original grammer as written in the file by the user:
+% % 
+ E : E   +   T   |   E   -   T   |   T 
+ T : T   *   F   |   T   /   F   |   F 
+ F : (   E   )   |   i d 
+ % % 
+ i d   [ 0 - 9 ] + 
+ 
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+List Of The Non-terminal or Starting Symbols Of The Grammer
+E:
+T:
+F:
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+Here Grammer Represent Through The Linked List Stored in The Memory: 
+E:E+T|E-T|T|
+T:T*F|T/F|F|
+F:(E)|id|
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+Grammer Represantation In the memory after removing  Left Recursion
+Here Grammer Represent Through The Linked List Stored in The Memory: 
+E:TGH|
+T:FIJ|
+F:(E)|id|
+G:+TG|@|
+H:-TH|@|
+I:*FI|@|
+J:/FJ|@|
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+Here In The First Function:-
+E:-(id
+T:-(id
+F:-(id
+G:-+@
+H:--@
+I:-*@
+@:-
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+Follow list of Grammer
+Starting sym:	Follow List-
+E :-		 $  )  
+T :-		 +  -  $  )  )  )  
+F :-		 +  -  $  )  +  )  
+G :-		 -  $  )  
+H :-		 $  )  
+I :-		 
+J :-		 +  -  +  $  )  )  
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+ Here is the list of terminal symbol:
+ +
+ -
+ *
+ /
+ (
+ )
+ id
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+Parser Table:
++: 	[G:+TG]	[J:@]	[J:@]
+-: 	[G:@]	[H:-TH]	[J:@]
+*: 	[I:*FI]
+/: 	[J:/FJ]
+(: 	[E:TGH]	[T:FIJ]	[F:(E)]
+): 	[G:@]	[H:@]	[J:@]	[J:@]
+id: 	[E:TGH]	[T:FIJ]	[F:id]
+$: 	[G:@]	[H:@]	[J:@]
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+Given Input To Be Parsed...:q!

@@ -1,0 +1,8 @@
+%%
+Emptyness:Pngg+Tempp|Gngg-Lemp|Temp
+Tempp:Tempp%Finite|Emptyness/Iinite|Dinite
+Fanaadd:(Emp)|Id
+%%
+iddd [0-9]+
+affg [0-9]+
+nudfm [0-9]+

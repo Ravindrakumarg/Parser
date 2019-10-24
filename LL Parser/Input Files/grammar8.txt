@@ -1,0 +1,7 @@
+%%
+D	: T L
+T	: type
+L	: L , id | id 
+%%
+type int|real
+id   [a-zA-z][a-zA-z0-9]+

@@ -1,0 +1,6 @@
+%%
+Stmt	: if Expr then Stmt | if Expr then Stmt else Stmt | a
+Expr	: b
+%%
+a [0-9]+
+b [0-9]+

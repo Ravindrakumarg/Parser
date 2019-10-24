@@ -1,0 +1,7 @@
+%%
+S	: L := E
+E	: E + E | ( E ) | L
+L	: Elist ] | id
+Elist	: Elist , E | id [ E
+%%
+id [0-9]+
